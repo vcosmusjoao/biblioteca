@@ -1,4 +1,4 @@
-package br.com.letscode.java.biblioteca.Usuario;
+package br.com.letscode.java.biblioteca.usuario;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -9,6 +9,7 @@ import lombok.ToString;
 @Getter
 @ToString
 @AllArgsConstructor
+
 public class Usuario {
     private String nome;
     private String prontuario;

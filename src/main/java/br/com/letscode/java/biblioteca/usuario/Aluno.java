@@ -1,4 +1,4 @@
-package br.com.letscode.java.biblioteca.Usuario;
+package br.com.letscode.java.biblioteca.usuario;
 
 public class Aluno extends Usuario {
     public static final int QTD_LIVRO = 3;
