@@ -14,4 +14,5 @@ public class Usuario {
     private String matricula;
     private String email;
     private int diasPunicao;
+
 }

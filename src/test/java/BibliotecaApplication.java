@@ -22,9 +22,7 @@ public class BibliotecaApplication {
         BibliotecaApplication teste = new BibliotecaApplication();
         teste.iniciar();
         teste.listarLivros();
-
     }
-
 
     private void iniciar() {
         cadastrarLivros();
@@ -35,6 +33,7 @@ public class BibliotecaApplication {
 
     }
 
+
     private void cadastrarLivros() {
         cadastrarLivro.adcionarLivro(new Livro("001", "A culpa é dasEstrelas", "John Green", "Intrinseca"));
         cadastrarLivro.adcionarLivro(new Livro("002", "Orgulho e Preconceito", "Jane Austen", "Martin Claret"));
@@ -42,6 +41,7 @@ public class BibliotecaApplication {
         cadastrarLivro.adcionarLivro(new Livro("004", "Dom Quixote de la Mancha", "Miguel de Cervantes", "Montecristo"));
         cadastrarLivro.adcionarLivro(new Livro("005", "O Pequeno Príncipe", "Antoine de Saint-Exupéry", "autentica"));
     }
+
 
     public void listarLivros() {
         System.out.println("Livros Disponiveis");
@@ -59,6 +59,8 @@ public class BibliotecaApplication {
         cadastrarUsuario.adicionarUsuario((new Aluno("Leonardo","005","leonardo@gmail.com")));
         cadastrarUsuario.adicionarUsuario((new Aluno("Kauan","006","kauan@gmail.com")));
     }
+
+
 
 
 
