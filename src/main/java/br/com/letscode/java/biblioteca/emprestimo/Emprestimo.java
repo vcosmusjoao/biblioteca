@@ -18,6 +18,7 @@ public class Emprestimo {
     private LocalDate dataInicio;
     private LocalDate dataFim;
 
+
     public Emprestimo(Usuario usuario, Livro livro) {
         this.usuario = usuario;
         this.livro = livro;

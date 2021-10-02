@@ -1,3 +1,4 @@
+import br.com.letscode.java.biblioteca.emprestimo.Emprestimo;
 import br.com.letscode.java.biblioteca.emprestimo.Feriado;
 import br.com.letscode.java.biblioteca.livro.CadastrarLivro;
 import br.com.letscode.java.biblioteca.livro.Livro;
@@ -18,6 +19,10 @@ public class BibliotecaApplication {
     private CadastroUsuario cadastrarUsuario= new CadastroUsuario();
     List<Usuario> usuarios;
 
+    List<Emprestimo> emprestimos= new ArrayList<>();
+
+
+
     public static void main(String[] args) {
         BibliotecaApplication teste = new BibliotecaApplication();
         teste.iniciar();
@@ -29,13 +34,13 @@ public class BibliotecaApplication {
         this.livros = this.cadastrarLivro.listarLivros();
         cadastrarUsuarios();
         this.usuarios=this.cadastrarUsuario.listarUsuario();
-
+        emprestimo();
 
     }
 
 
     private void cadastrarLivros() {
-        cadastrarLivro.adcionarLivro(new Livro("001", "A culpa é dasEstrelas", "John Green", "Intrinseca"));
+        cadastrarLivro.adcionarLivro(new Livro("001", "A culpa é das Estrelas", "John Green", "Intrinseca"));
         cadastrarLivro.adcionarLivro(new Livro("002", "Orgulho e Preconceito", "Jane Austen", "Martin Claret"));
         cadastrarLivro.adcionarLivro(new Livro("003", "1984", "George Orwell", "Companhia das Letras"));
         cadastrarLivro.adcionarLivro(new Livro("004", "Dom Quixote de la Mancha", "Miguel de Cervantes", "Montecristo"));
@@ -58,6 +63,19 @@ public class BibliotecaApplication {
         cadastrarUsuario.adicionarUsuario((new Aluno("Lidia Lima","004","lidia@gmail.com")));
         cadastrarUsuario.adicionarUsuario((new Aluno("Leonardo","005","leonardo@gmail.com")));
         cadastrarUsuario.adicionarUsuario((new Aluno("Kauan","006","kauan@gmail.com")));
+    }
+
+    private void emprestimo(){
+
+        emprestimos.add(new Emprestimo(usuarios.get(0),livros.get(2)));
+        emprestimos.add(new Emprestimo(usuarios.get(1),livros.get(0)));
+        emprestimos.add(new Emprestimo(usuarios.get(2),livros.get(4)));
+
+        for(Emprestimo emprestimo:emprestimos){
+            System.out.println(emprestimo);
+        }
+
+
     }
 
 
