@@ -14,7 +14,6 @@ public class Feriado {
 
     private static List<Feriado> getFeriados(){
         List<Feriado> feriadosList=new ArrayList<>();
-
         feriadosList.add(new Feriado(LocalDate.of(2021, 1, 1),"Confraternização Universal"));
         feriadosList.add(new Feriado(LocalDate.of(2021, 4, 2),"Páscoa"));
         feriadosList.add(new Feriado(LocalDate.of(2021, 4, 21),"Tiradentes"));
