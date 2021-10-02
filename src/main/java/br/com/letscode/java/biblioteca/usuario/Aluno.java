@@ -14,5 +14,6 @@ public class Aluno extends Usuario {
         super(nome, matricula, email, 0);
         this.temEmprestimo = false;
     }
+
 }
 
