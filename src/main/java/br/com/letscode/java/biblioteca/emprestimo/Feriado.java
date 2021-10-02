@@ -3,11 +3,13 @@ package br.com.letscode.java.biblioteca.emprestimo;
 import lombok.Value;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
 
 @Value
 public class Feriado {
+<<<<<<< HEAD
+    LocalDate feriado;
+    String descricao;
+=======
 
     LocalDate data;
     String descricao;
@@ -26,4 +28,5 @@ public class Feriado {
         return feriadosList;
     }
 
+>>>>>>> 61438697b883a045a099041a5c5212ec5af6892a
 }

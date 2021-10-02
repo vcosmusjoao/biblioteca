@@ -23,6 +23,21 @@ public class Emprestimo {
         this.usuario = usuario;
         this.livro = livro;
         this.dataInicio = LocalDate.now();
-        this.dataFim = null;
+        this.dataFim = gerarDataFim(usuario.getDiasUteis());
+    }
+
+    private LocalDate gerarDataFim(int qtdDias) {
+        LocalDate data = LocalDate.now();
+        int diasUteis = 0;
+
+        while (diasUteis < qtdDias) {
+            data = data.plusDays(1);
+
+            if (GerarNovaData.isDiaUtil(data)) {
+                diasUteis++;
+            }
+        }
+
+        return data;
     }
 }
