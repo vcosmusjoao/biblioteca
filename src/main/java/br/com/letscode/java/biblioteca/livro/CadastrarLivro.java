@@ -12,6 +12,6 @@ public class CadastrarLivro {
     }
 
     public List<Livro> listarLivros(){
-        return livros;
+        return this.livros;
     }
 }
