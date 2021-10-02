@@ -75,7 +75,7 @@ public class BibliotecaApplication {
             System.out.println(emprestimo);
         }
 
-        
+
 
     }
 
