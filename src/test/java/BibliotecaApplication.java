@@ -12,15 +12,14 @@ public class BibliotecaApplication {
         BibliotecaApplication teste = new BibliotecaApplication();
         teste.iniciar();
         teste.listarLivros();
-
     }
-
 
     private void iniciar() {
         cadastrarLivros();
         this.livros = this.cadastrarLivro.listarLivros();
 
     }
+
 
     private void cadastrarLivros() {
         cadastrarLivro.adcionarLivro(new Livro("001", "A culpa é dasEstrelas", "John Green", "Intrinseca"));
@@ -30,6 +29,7 @@ public class BibliotecaApplication {
         cadastrarLivro.adcionarLivro(new Livro("005", "O Pequeno Príncipe", "Antoine de Saint-Exupéry", "autentica"));
     }
 
+
     public void listarLivros() {
         System.out.println("Livros Disponiveis");
         int i=1;
@@ -37,6 +37,8 @@ public class BibliotecaApplication {
             System.out.println("======LIVRO "+(i++)+" "+livro);
         }
     }
+
+
 
 
 

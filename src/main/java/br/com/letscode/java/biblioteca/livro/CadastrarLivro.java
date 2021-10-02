@@ -3,6 +3,7 @@ package br.com.letscode.java.biblioteca.livro;
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class CadastrarLivro {
     private List<Livro> livros= new ArrayList<>();
 
@@ -13,7 +14,4 @@ public class CadastrarLivro {
     public List<Livro> listarLivros(){
         return livros;
     }
-
-
-
 }
