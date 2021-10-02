@@ -6,13 +6,6 @@ import java.util.List;
 
 public class Biblioteca {
 
-    private List<Livro> livros = new ArrayList<>();
-    public void adicionarLivro(Livro livro) {
-        this.livros.add(livro);
-    }
-
-    public List<Livro> listarLivros(){
-        return livros;
-    }
-
+    
+    
 }
