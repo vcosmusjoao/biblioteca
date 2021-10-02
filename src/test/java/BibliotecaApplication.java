@@ -1,12 +1,22 @@
+import br.com.letscode.java.biblioteca.emprestimo.Feriado;
 import br.com.letscode.java.biblioteca.livro.CadastrarLivro;
 import br.com.letscode.java.biblioteca.livro.Livro;
+import br.com.letscode.java.biblioteca.usuario.Aluno;
+import br.com.letscode.java.biblioteca.usuario.CadastroUsuario;
+import br.com.letscode.java.biblioteca.usuario.Professor;
+import br.com.letscode.java.biblioteca.usuario.Usuario;
 
+import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 public class BibliotecaApplication {
 
     private CadastrarLivro cadastrarLivro = new CadastrarLivro();
     List<Livro> livros;
+
+    private CadastroUsuario cadastrarUsuario= new CadastroUsuario();
+    List<Usuario> usuarios;
 
     public static void main(String[] args) {
         BibliotecaApplication teste = new BibliotecaApplication();
@@ -17,6 +27,9 @@ public class BibliotecaApplication {
     private void iniciar() {
         cadastrarLivros();
         this.livros = this.cadastrarLivro.listarLivros();
+        cadastrarUsuarios();
+        this.usuarios=this.cadastrarUsuario.listarUsuario();
+
 
     }
 
@@ -37,6 +50,17 @@ public class BibliotecaApplication {
             System.out.println("======LIVRO "+(i++)+" "+livro);
         }
     }
+
+    private void cadastrarUsuarios(){
+        cadastrarUsuario.adicionarUsuario(new Professor("Jessé","001","jesse@gmail.com"));
+        cadastrarUsuario.adicionarUsuario((new Aluno("João Victor","002","joao@gmail.com")));
+        cadastrarUsuario.adicionarUsuario((new Aluno("Lauredi","003","lauredi@gmail.com")));
+        cadastrarUsuario.adicionarUsuario((new Aluno("Lidia Lima","004","lidia@gmail.com")));
+        cadastrarUsuario.adicionarUsuario((new Aluno("Leonardo","005","leonardo@gmail.com")));
+        cadastrarUsuario.adicionarUsuario((new Aluno("Kauan","006","kauan@gmail.com")));
+    }
+
+
 
 
 

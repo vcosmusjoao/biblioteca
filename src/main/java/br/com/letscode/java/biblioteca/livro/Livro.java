@@ -9,11 +9,9 @@ import lombok.ToString;
 @Getter
 @ToString
 @AllArgsConstructor
-
 public class Livro {
     private String isbn;
     private String titulo;
     private String autor;
     private String editora;
-
 }
