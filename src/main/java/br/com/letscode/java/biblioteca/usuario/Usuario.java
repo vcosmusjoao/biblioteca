@@ -13,6 +13,6 @@ public class Usuario {
     private String nome;
     private String matricula;
     private String email;
+    private int diasUteis;
     private int diasPunicao;
-
 }

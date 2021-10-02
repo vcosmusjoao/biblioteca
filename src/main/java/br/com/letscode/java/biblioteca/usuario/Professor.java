@@ -5,6 +5,6 @@ public class Professor extends Usuario {
     public static final int DIAS_UTEIS = 20;
 
     public Professor(String nome, String matricula, String email) {
-        super(nome, matricula, email, 0);
+        super(nome, matricula, email, DIAS_UTEIS, 0);
     }
 }
