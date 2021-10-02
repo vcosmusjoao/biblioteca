@@ -11,7 +11,8 @@ import lombok.ToString;
 @AllArgsConstructor
 
 public class Usuario {
+
     private String nome;
-    private String prontuario;
+    private String matricula;
     private String email;
 }
