@@ -1,5 +1,8 @@
 package br.com.letscode.java.biblioteca;
 
+import br.com.letscode.java.biblioteca.usuario.Usuario;
+
+
 import br.com.letscode.java.biblioteca.emprestimo.Emprestimo;
 import br.com.letscode.java.biblioteca.emprestimo.EmprestimoException;
 import br.com.letscode.java.biblioteca.livro.Livro;
@@ -41,6 +44,7 @@ public class Biblioteca {
 
     public List<Emprestimo> listarEmprestimos() {
         return this.emprestimos;
+
     }
 
     public void devolverLivro(Usuario usuario, List<Livro> livros) {

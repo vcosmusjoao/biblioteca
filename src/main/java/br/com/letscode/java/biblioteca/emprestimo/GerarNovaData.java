@@ -4,7 +4,6 @@ import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-
 import static java.time.DayOfWeek.*;
 
 public class GerarNovaData {
@@ -24,6 +23,7 @@ public class GerarNovaData {
 
         return false;
     }
+
 
     private static List<Feriado> getFeriado(){
         List<Feriado> feriadosList = new ArrayList<>();
