@@ -1,4 +1,6 @@
+import br.com.letscode.java.biblioteca.Biblioteca;
 import br.com.letscode.java.biblioteca.emprestimo.Emprestimo;
+import br.com.letscode.java.biblioteca.emprestimo.EmprestimoException;
 import br.com.letscode.java.biblioteca.emprestimo.Feriado;
 import br.com.letscode.java.biblioteca.livro.CadastrarLivro;
 import br.com.letscode.java.biblioteca.livro.Livro;
@@ -20,11 +22,13 @@ public class BibliotecaApplication {
     List<Usuario> usuarios;
 
     List<Emprestimo> emprestimos= new ArrayList<>();
+    Biblioteca biblioteca;
 
 
 
     public static void main(String[] args) {
         BibliotecaApplication teste = new BibliotecaApplication();
+        teste.biblioteca = new Biblioteca();
         teste.iniciar();
         teste.listarLivros();
     }
@@ -35,8 +39,6 @@ public class BibliotecaApplication {
         cadastrarUsuarios();
         this.usuarios=this.cadastrarUsuario.listarUsuario();
         emprestimo();
-
-
     }
 
 
@@ -66,24 +68,26 @@ public class BibliotecaApplication {
         cadastrarUsuario.adicionarUsuario((new Aluno("Kauan","006","kauan@gmail.com")));
     }
 
-    private void emprestimo(){
+    private void emprestimo() {
+        List<Livro> t = new ArrayList<>();
+        t.add(this.livros.get(0));
 
-        emprestimos.add(new Emprestimo(usuarios.get(0),livros.get(2)));
-        emprestimos.add(new Emprestimo(usuarios.get(1),livros.get(0)));
-        emprestimos.add(new Emprestimo(usuarios.get(2),livros.get(4)));
+        try {
+            biblioteca.adicionarEmprestimo(usuarios.get(0), t);
+            biblioteca.adicionarEmprestimo(usuarios.get(1), t);
+        }
+        catch (EmprestimoException e) {
+            e.printStackTrace();
+        }
 
-        for(Emprestimo emprestimo:emprestimos){
+        for(Emprestimo emprestimo : biblioteca.listarEmprestimos()){
             System.out.println(emprestimo);
         }
 
-        
-
+        System.out.println();
+        biblioteca.devolverLivro(usuarios.get(2), t);
+        for(Emprestimo emprestimo : biblioteca.listarEmprestimos()){
+            System.out.println(emprestimo);
+        }
     }
-
-
-
-
-
-
-
 }
