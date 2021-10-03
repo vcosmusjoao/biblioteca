@@ -4,7 +4,6 @@ import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-
 import static java.time.DayOfWeek.*;
 
 public class GerarNovaData {
@@ -15,9 +14,9 @@ public class GerarNovaData {
     }
 
     private static boolean isFeriado(LocalDate data) {
-        List<Feriado> feriados = extracted();
+        List<Feriado> feriados = getFeriado();
         for (Feriado f : feriados) {
-            if (f.getFeriado().isEqual(data)) {
+            if (f.getData().isEqual(data)) {
                 return true;
             }
         }
@@ -25,7 +24,7 @@ public class GerarNovaData {
         return false;
     }
 
-    private static List<Feriado> extracted() {
+    private static List<Feriado> getFeriado() {
         List<Feriado> feriados = new ArrayList<>();
 
         feriados.add(new Feriado(LocalDate.of(2021, 1,1), ""));

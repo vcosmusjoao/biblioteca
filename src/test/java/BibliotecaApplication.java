@@ -68,9 +68,13 @@ public class BibliotecaApplication {
 
     private void emprestimo(){
 
-        emprestimos.add(new Emprestimo(usuarios.get(0),livros.get(2)));
-        emprestimos.add(new Emprestimo(usuarios.get(1),livros.get(0)));
-        emprestimos.add(new Emprestimo(usuarios.get(2),livros.get(4)));
+
+            emprestimos.add(new Emprestimo(usuarios.get(0), livros.get(2)));
+            emprestimos.add(new Emprestimo(usuarios.get(0), livros.get(1)));
+            emprestimos.add(new Emprestimo(usuarios.get(0), livros.get(3)));
+            emprestimos.add(new Emprestimo(usuarios.get(1), livros.get(0)));
+            emprestimos.add(new Emprestimo(usuarios.get(2), livros.get(4)));
+
 
         for(Emprestimo emprestimo:emprestimos){
             System.out.println(emprestimo);

@@ -1,8 +1,12 @@
 package br.com.letscode.java.biblioteca;
 
-import java.util.ArrayList;
-import java.util.List;
+import br.com.letscode.java.biblioteca.usuario.Usuario;
 
-public class Biblioteca {
+public class Biblioteca  {
+
+
+    public void validarSeUsuarioPodeFazerEmprestimo(Usuario usuario) throws AlunoEmprestimoException {
+
+    }
 
 }
