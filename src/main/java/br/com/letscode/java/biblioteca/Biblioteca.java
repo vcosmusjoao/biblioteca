@@ -3,16 +3,15 @@ package br.com.letscode.java.biblioteca;
 import br.com.letscode.java.biblioteca.emprestimo.Emprestimo;
 import br.com.letscode.java.biblioteca.emprestimo.EmprestimoException;
 import br.com.letscode.java.biblioteca.livro.Livro;
-import br.com.letscode.java.biblioteca.usuario.CadastroUsuario;
 import br.com.letscode.java.biblioteca.usuario.Usuario;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Biblioteca {
-    private List<Usuario> usuarios;
-    private List<Livro> livros;
-    private List<Emprestimo> emprestimos;
+    private final List<Usuario> usuarios;
+    private final List<Livro> livros;
+    private final List<Emprestimo> emprestimos;
 
     public Biblioteca() {
         this.usuarios = new ArrayList<>();
