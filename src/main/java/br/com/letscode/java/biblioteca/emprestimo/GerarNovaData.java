@@ -24,19 +24,20 @@ public class GerarNovaData {
         return false;
     }
 
-    private static List<Feriado> getFeriado() {
-        List<Feriado> feriados = new ArrayList<>();
 
-        feriados.add(new Feriado(LocalDate.of(2021, 1,1), ""));
-        feriados.add(new Feriado(LocalDate.of(2021, 4,2), ""));
-        feriados.add(new Feriado(LocalDate.of(2021, 4,21), ""));
-        feriados.add(new Feriado(LocalDate.of(2021, 5,1), ""));
-        feriados.add(new Feriado(LocalDate.of(2021, 9,7), ""));
-        feriados.add(new Feriado(LocalDate.of(2021, 10,12), ""));
-        feriados.add(new Feriado(LocalDate.of(2021, 11,2), ""));
-        feriados.add(new Feriado(LocalDate.of(2021, 11,15), ""));
-        feriados.add(new Feriado(LocalDate.of(2021, 12,25), ""));
+    private static List<Feriado> getFeriado(){
+        List<Feriado> feriadosList = new ArrayList<>();
 
-        return feriados;
+        feriadosList.add(new Feriado(LocalDate.of(2021, 1, 1),"Confraternização Universal"));
+        feriadosList.add(new Feriado(LocalDate.of(2021, 4, 2),"Páscoa"));
+        feriadosList.add(new Feriado(LocalDate.of(2021, 4, 21),"Tiradentes"));
+        feriadosList.add(new Feriado(LocalDate.of(2021, 5, 1),"Dia do Trabalho"));
+        feriadosList.add(new Feriado(LocalDate.of(2021, 9, 7),"Independência"));
+        feriadosList.add(new Feriado(LocalDate.of(2021, 10, 12),"Padroeira do Brasil"));
+        feriadosList.add(new Feriado(LocalDate.of(2021, 11, 2),"Finados"));
+        feriadosList.add(new Feriado(LocalDate.of(2021, 11, 15),"Proclamação da República"));
+        feriadosList.add(new Feriado(LocalDate.of(2021, 12, 25),"Natal"));
+
+        return feriadosList;
     }
 }

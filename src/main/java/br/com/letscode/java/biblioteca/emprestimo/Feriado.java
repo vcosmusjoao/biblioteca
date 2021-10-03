@@ -8,11 +8,7 @@ import java.util.List;
 
 @Value
 public class Feriado {
-
     LocalDate data;
     String descricao;
-
-
-
 
 }
