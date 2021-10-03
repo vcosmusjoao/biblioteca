@@ -4,7 +4,6 @@ import br.com.letscode.java.biblioteca.livro.Livro;
 import br.com.letscode.java.biblioteca.usuario.Aluno;
 import br.com.letscode.java.biblioteca.usuario.Professor;
 import br.com.letscode.java.biblioteca.usuario.Usuario;
-
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -38,7 +37,7 @@ public class Emprestimo {
     private void validarProfessor(Usuario usuario, int count) throws EmprestimoException {
         int livrosTotal = usuario.getQtdLivrosEmprestimo() + count;
 
-        if (livrosTotal > Professor.QTD_LIVRO) {
+        if (livrosTotal > Professor.QTD_LIVRO || verificarPunicao(usuario)) {
             throw new EmprestimoException("O professor não pode realizar o emprestimo");
         }
         else {
@@ -46,8 +45,19 @@ public class Emprestimo {
         }
     }
 
+    private boolean verificarPunicao(Usuario usuario) {
+        LocalDate dataPunicao = usuario.getDataPunicao();
+        LocalDate hoje = LocalDate.now();
+
+        if (usuario.getDataPunicao() == null) {
+            return false;
+        }
+
+        return dataPunicao.isAfter(hoje) || dataPunicao.equals(hoje);
+    }
+
     private void validarAluno(Usuario usuario, int count) throws EmprestimoException {
-        if (usuario.getQtdLivrosEmprestimo() != 0 || count > Aluno.QTD_LIVRO) {
+        if (usuario.getQtdLivrosEmprestimo() != 0 || count > Aluno.QTD_LIVRO || verificarPunicao(usuario)) {
             throw new EmprestimoException("O aluno não pode realizar o emprestimo");
         }
         else {
@@ -70,5 +80,21 @@ public class Emprestimo {
         return data;
     }
 
+    public void colocarPunicao() {
+        LocalDate data = LocalDate.now();
 
+        if (data.isAfter(this.dataFim)) {
+            int diasUteis = 0;
+
+            while (diasUteis < GerarNovaData.dataPunicao(this.dataFim)) {
+                data = data.plusDays(1);
+
+                if (GerarNovaData.isDiaUtil(data)) {
+                    diasUteis++;
+                }
+            }
+
+            this.usuario.setDataPunicao(data);
+        }
+    }
 }

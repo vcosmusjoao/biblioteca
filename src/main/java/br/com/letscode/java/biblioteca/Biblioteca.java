@@ -1,8 +1,5 @@
 package br.com.letscode.java.biblioteca;
 
-import br.com.letscode.java.biblioteca.usuario.Usuario;
-
-
 import br.com.letscode.java.biblioteca.emprestimo.Emprestimo;
 import br.com.letscode.java.biblioteca.emprestimo.EmprestimoException;
 import br.com.letscode.java.biblioteca.livro.Livro;
@@ -50,6 +47,8 @@ public class Biblioteca {
     public void devolverLivro(Usuario usuario, List<Livro> livros) {
         for (Emprestimo e : this.emprestimos) {
             if (e.getUsuario().hashCode() == usuario.hashCode() && e.getLivros().hashCode() == livros.hashCode()) {
+                e.colocarPunicao();
+                usuario.setQtdLivrosEmprestimo(usuario.getQtdLivrosEmprestimo() - livros.size());
                 this.emprestimos.remove(e);
                 break;
             }
