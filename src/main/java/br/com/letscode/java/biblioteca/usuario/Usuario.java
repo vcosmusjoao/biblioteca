@@ -15,4 +15,5 @@ public class Usuario {
     private String email;
     private int diasUteis;
     private int diasPunicao;
+    private int qtdLivrosEmprestimo;
 }
