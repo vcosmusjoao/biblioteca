@@ -13,12 +13,5 @@ public class Aluno extends Usuario {
     public Aluno(String nome, String matricula, String email) {
         super(nome, matricula, email, DIAS_UTEIS, 0, 0);
     }
-<<<<<<< HEAD
-
-
-
-
-=======
->>>>>>> d419c598213c4fba191394fda7b88ffa618299dc
 }
 

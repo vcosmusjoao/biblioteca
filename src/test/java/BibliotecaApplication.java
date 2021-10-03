@@ -71,31 +71,23 @@ public class BibliotecaApplication {
     private void emprestimo() {
         List<Livro> t = new ArrayList<>();
         t.add(this.livros.get(0));
-
-<<<<<<< HEAD
-
-            emprestimos.add(new Emprestimo(usuarios.get(0), livros.get(2)));
-            emprestimos.add(new Emprestimo(usuarios.get(0), livros.get(1)));
-            emprestimos.add(new Emprestimo(usuarios.get(0), livros.get(3)));
-            emprestimos.add(new Emprestimo(usuarios.get(1), livros.get(0)));
-            emprestimos.add(new Emprestimo(usuarios.get(2), livros.get(4)));
-
-=======
+        t.add(this.livros.get(3));
+        t.add(this.livros.get(1));
         try {
             biblioteca.adicionarEmprestimo(usuarios.get(0), t);
             biblioteca.adicionarEmprestimo(usuarios.get(1), t);
+
         }
         catch (EmprestimoException e) {
             e.printStackTrace();
         }
->>>>>>> d419c598213c4fba191394fda7b88ffa618299dc
 
         for(Emprestimo emprestimo : biblioteca.listarEmprestimos()){
             System.out.println(emprestimo);
         }
 
         System.out.println();
-        biblioteca.devolverLivro(usuarios.get(2), t);
+        biblioteca.devolverLivro(usuarios.get(1), t);
         for(Emprestimo emprestimo : biblioteca.listarEmprestimos()){
             System.out.println(emprestimo);
         }
