@@ -8,6 +8,7 @@ import br.com.letscode.java.biblioteca.usuario.Aluno;
 import br.com.letscode.java.biblioteca.usuario.CadastroUsuario;
 import br.com.letscode.java.biblioteca.usuario.Professor;
 import br.com.letscode.java.biblioteca.usuario.Usuario;
+import org.springframework.util.SocketUtils;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -52,10 +53,10 @@ public class BibliotecaApplication {
 
 
     public void listarLivros() {
-        System.out.println("Livros Disponiveis");
+        System.out.println("========LIVROS DISPONIVEIS");
         int i=1;
         for (Livro livro : livros) {
-            System.out.println("======LIVRO "+(i++)+" "+livro);
+            System.out.println("==LIVRO "+(i++)+" "+livro);
         }
     }
 
@@ -81,15 +82,17 @@ public class BibliotecaApplication {
         catch (EmprestimoException e) {
             e.printStackTrace();
         }
-
+        System.out.println("========EMPRESTIMOS REALIZADOS");
         for(Emprestimo emprestimo : biblioteca.listarEmprestimos()){
             System.out.println(emprestimo);
         }
 
         System.out.println();
         biblioteca.devolverLivro(usuarios.get(1), t);
+        System.out.println("========LIVROS QUE AINDA NÃO FORAM DEVOLVIDOS");
         for(Emprestimo emprestimo : biblioteca.listarEmprestimos()){
             System.out.println(emprestimo);
         }
+        System.out.println();
     }
 }
