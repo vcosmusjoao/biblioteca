@@ -5,6 +5,8 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
+import java.time.LocalDate;
+
 @Setter
 @Getter
 @ToString
@@ -14,6 +16,6 @@ public class Usuario {
     private String matricula;
     private String email;
     private int diasUteis;
-    private int diasPunicao;
+    private LocalDate dataPunicao;
     private int qtdLivrosEmprestimo;
 }

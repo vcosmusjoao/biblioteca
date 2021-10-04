@@ -24,7 +24,6 @@ public class GerarNovaData {
         return false;
     }
 
-
     private static List<Feriado> getFeriado(){
         List<Feriado> feriadosList = new ArrayList<>();
 
@@ -39,5 +38,19 @@ public class GerarNovaData {
         feriadosList.add(new Feriado(LocalDate.of(2021, 12, 25),"Natal"));
 
         return feriadosList;
+    }
+
+    public static int dataPunicao(LocalDate dataFim) {
+        int num = 0;
+
+        while (!dataFim.equals(LocalDate.now())) {
+            dataFim = dataFim.plusDays(1);
+
+            if (isDiaUtil(dataFim)) {
+                num++;
+            }
+        }
+
+        return num;
     }
 }
